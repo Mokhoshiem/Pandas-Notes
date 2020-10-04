@@ -19,3 +19,9 @@ df_from_dic_data.rename(columns = {"e-mail": "e_mail"}, inplace = True)
 
 # to change a specific value choose it and assign the new one
 df_from_dic_data.loc[0, "FIRST_NAME"] = "Mando" # We can easily use loc and iloc[row column] to define the specific cell
+
+# Getting some info about DataFrame
+df_from_dic_data.describe
+df_from_dic_data.size
+df_from_dic_data.shape
+df_from_dic_data.type
