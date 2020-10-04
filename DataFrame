@@ -1,0 +1,21 @@
+import pandas as pd
+df_from_dic_data = pd.DataFrame(data)
+## >> 	  first name  	last name	    e-mail	                        Age
+      0 	Mohamed	      Abdelkarim	   mohamed.abokhoshiem@gmail.com	29.0
+      1 	Adel	        Abokhoshiem	   Adel_adel@email.com	          15.0
+      2 	Hagar	        Adel	         princess.jojo@yahoo.com	      28.0
+      3 	missing	      Fadl	         NA	                             NaN
+      
+# we can set the index to a specific column 
+df_from_dic_data.set_index('last name', inplace=True)
+
+# to reset the index to the basic status use DataFrame.reset_index(inplace=True)
+
+# changing the columns names with replace method:
+df_from_dic_data.columns = df_from_dic_data.columns.str.replace(" ", "_")
+
+# we can also rename the columns using .rename(columns = {'old':'new'}, inplace=True)
+df_from_dic_data.rename(columns = {"e-mail": "e_mail"}, inplace = True)
+
+# to change a specific value choose it and assign the new one
+df_from_dic_data.loc[0, "FIRST_NAME"] = "Mando" # We can easily use loc and iloc[row column] to define the specific cell
