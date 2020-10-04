@@ -1,0 +1,23 @@
+import numpy as np
+data = {
+            "first name":[],
+            "last name": [],
+            "e-mail":[],
+            "Age":[]
+        }
+
+class Entry:
+    def __init__(self, fname, lname, age,email):
+        self.first_name = fname
+        self.last_name = lname
+        self.age = age
+        self.email = email
+        data["first name"].append(self.first_name)
+        data["last name"].append(self.last_name)
+        data["Age"].append(self.age)
+        data["e-mail"].append(self.email)
+ 
+ Mohamed = Entry("Mohamed", "Abdelkarim", 29,"mohamed.abokhoshiem@gmail.com")
+Adel = Entry("Adel", "Abokhoshiem", 15,"Adel_adel@email.com")
+Hagar = Entry("Hagar", "Adel", 28,"princess.jojo@yahoo.com")
+Mai = Entry("missing", "Fadl",np.nan,"NA")
