@@ -167,9 +167,9 @@ def user_stats(df):
         most_recent_bd = df['Birth Year'].max()
         earliest_bd = df['Birth Year'].min()
         most_common_bd = df['Birth Year'].mode()[0]
-        print(f'earliest birth year is {earliest_bd.strftime("%Y")}')
-        print(f'most recent birth year is {most_recent_bd.strftime("%Y") }')
-        print(f'most common birth year is {most_common_bd.strftime("%Y")}')
+        print(f'earliest birth year is {earliest_bd}')
+        print(f'most recent birth year is {most_recent_bd}')
+        print(f'most common birth year is {most_common_bd}')
     
 
     print("\nThis took %s seconds." % (time.time() - start_time))
