@@ -17,7 +17,7 @@ def get_filters():
     """
     print('Hello! Let\'s explore some US bikeshare data!')
     # TO DO: get user input for city (chicago, new york city, washingtno). HINT: Use a while loop to handle invalid inputs
-    city = input('Choose city (chicago, new york city, washingtno): ' )
+    city = input('Choose city (chicago, new york city, washingtno): ' ).lower()
     while city not in CITY_DATA:
         continue
 
@@ -174,8 +174,23 @@ def user_stats(df):
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
-
-
+# the show function is to show 5 rows of data at a time.
+def show():
+  #Asking to show the results >>>
+    to_show = input('\nWould you like to see 5 rows of data? Enter yes or no.\n')
+    if to_show.lower != 'no':
+        start_row = 0
+        end_row = 4
+        print(df.iloc[start_row:end_row])
+        ## Asking if want to show more >>>>
+        
+        confirmation = input('\nWould you like to see an other 5 rows of data? Enter yes or no.\n')
+        if confirmation.lower() != 'no':
+          ## Increaing by 5
+            start_row += 5
+            end_row += 5
+            print(df.iloc[start_row:end_row])
+    
 def main():
     while True:
         city, month, day, handle_na, fillvalue = get_filters()
@@ -186,6 +201,7 @@ def main():
         trip_duration_stats(df)
         user_stats(df)
         # print(df['Birth Year'])
+        show()
 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
