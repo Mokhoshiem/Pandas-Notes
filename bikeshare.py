@@ -178,7 +178,7 @@ def user_stats(df):
 def show():
   #Asking to show the results >>>
     to_show = input('\nWould you like to see 5 rows of data? Enter yes or no.\n')
-    if to_show.lower != 'no':
+    if to_show.lower() != 'no':
         start_row = 0
         end_row = 4
         print(df.iloc[start_row:end_row])
